@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
+import openai
+openai.key = ''
 
 app = Flask(__name__)
 
