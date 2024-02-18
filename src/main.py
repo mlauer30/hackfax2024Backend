@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import csv
-import json  # Import json module to load the data from the file
+import json
 from openai import OpenAI
 
 client = OpenAI(api_key='')
