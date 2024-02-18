@@ -34,9 +34,6 @@ $ source ./env/bin/activate
 $ pip install flask flask_cors openai
 ```
 
-## Project Structure
-The root of the project contains the `src` directory which contains the`spanalyzer` directory, which contains `__main.py`, `__init__.py`, and `application/`. `application/` contains `core/`, `gui/`, `main/`, `parsers/`, and `utilities/`. Each of these directories contains some of the scripts originally within this directory, which have now been split up based on function. The root of the project contains the `README` and `LICENSE`, and the `scripts/` directory, which contains the `typecheck_repo.py` script.
-
 ## Acquiring API Keys
 Acquire your own ChatGPT access key from OpenAI to use for this project. Please do keep in mind you will need to provide a payment method to access the API.
 
