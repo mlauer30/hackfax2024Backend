@@ -4,7 +4,7 @@ import csv
 import json
 import openai
 
-openai.api_key='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'
+openai.api_key=''
 
 
 class Student:
