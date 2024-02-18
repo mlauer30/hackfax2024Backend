@@ -48,7 +48,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    data = load_data_from_file()  # Load data from file
+    data = load_data_from_file()
     students_instances = json_to_students(data)
     html_content = "<h1>Student Information</h1>"
     for student in students_instances:
