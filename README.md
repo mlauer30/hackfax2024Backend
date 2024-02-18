@@ -1,7 +1,7 @@
 # Study Buddy
 
 ## Project Information
-
+This is the backend for the Study Buddy project for the GMU HackFax 2024 Hackathon.
 
 ## Installing and Building the Package
 
