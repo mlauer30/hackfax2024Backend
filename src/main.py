@@ -1,13 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import csv
 import json
-#from openai import OpenAI
-
 import openai
 
-#client = OpenAI()
-
-openai.api_key=''
+openai.api_key='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'
 
 
 class Student:
@@ -57,6 +54,7 @@ def call_ai(request):
         return "500\n"
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello_world():
@@ -71,7 +69,7 @@ def hello_world():
             student_info += f" - {cls['name']} with partners {partners_str} at times {times_str}<br>"
         student_info += "</p>"
         html_content += student_info
-    return call_ai("Give me a sample JSON file with 5 entries.")
+    return html_content
 
 
 @app.route('/upload', methods=['POST'])
