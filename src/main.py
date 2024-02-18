@@ -1,15 +1,14 @@
 from flask import Flask, request, jsonify
 import csv
 import json
-from openai import OpenAI
+#from openai import OpenAI
 
-client = OpenAI(api_key='')
+import openai
 
+#client = OpenAI()
 
-response = client.completions.create(
-model="gpt-3.5-turbo",
-prompt="Translate the following English text to French: 'Hello, world!'" # Your prompt
-)
+openai.api_key=''
+
 
 class Student:
     def __init__(self, name, major, classes):
@@ -44,6 +43,19 @@ def json_to_students(data):
         students.append(student)
     return students
 
+def call_ai(request):
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": "For all responses, ONLY give me code, do not give me code blocks or any type of response beyond plaintext code."},
+                {"role": "user", "content": request}
+            ]
+        )
+        return response.choices[0].message['content']
+    except Exception as e:
+        return "500\n"
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -59,7 +71,8 @@ def hello_world():
             student_info += f" - {cls['name']} with partners {partners_str} at times {times_str}<br>"
         student_info += "</p>"
         html_content += student_info
-    return response.choices[0].text.strip()
+    return call_ai("Give me a sample JSON file with 5 entries.")
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -78,6 +91,14 @@ def upload_file():
         return jsonify({"message": "File processed successfully"}), 200
     else:
         return jsonify({"error": "Invalid file format"}), 400
+
+@app.route('/return', methods=['GET'])
+def return_data_to_frontend():
+    data = {
+        'message': 'Hello!',
+        'items': [1, 2, 3, 4, 5]
+    }
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
