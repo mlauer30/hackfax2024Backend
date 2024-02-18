@@ -1,0 +1,63 @@
+{
+    "users": [
+      {
+        "Name": "MARK",
+        "Major": "Computer Science",
+        "classes": [
+          {
+            "name": "MATH112",
+            "partners": ["MATTHEW"],
+            "time": [
+              {"start": "13:00", "end": "15:00"}
+            ]
+          },
+          {
+            "name": "CS201",
+            "partners": [],
+            "time": [
+              {"start": "10:00", "end": "12:00"},
+              {"start": "14:00", "end": "16:00"}
+            ]
+          },
+          {
+            "name": "PY101",
+            "partners": ["SARA", "JOHN"],
+            "time": [
+              {"start": "9:00", "end": "11:00"},
+              {"start": "15:00", "end": "17:00"}
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "JENNY",
+        "Major": "Mathematics",
+        "classes": [
+          {
+            "name": "MATH112",
+            "partners": ["EMMA"],
+            "time": [
+              {"start": "13:00", "end": "15:00"}
+            ]
+          },
+          {
+            "name": "CS201",
+            "partners": ["SAM"],
+            "time": [
+              {"start": "10:00", "end": "12:00"},
+              {"start": "14:00", "end": "16:00"}
+            ]
+          },
+          {
+            "name": "PY101",
+            "partners": ["SARA"],
+            "time": [
+              {"start": "9:00", "end": "11:00"},
+              {"start": "15:00", "end": "17:00"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
