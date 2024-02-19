@@ -92,11 +92,8 @@ def upload_file():
 
 @app.route('/return', methods=['GET'])
 def return_data_to_frontend():
-    data = {
-        'message': 'Hello!',
-        'items': [1, 2, 3, 4, 5]
-    }
-    return jsonify(data)
+    data = call_ai("Give me a sample json object")
+    return data
 
 if __name__ == '__main__':
     app.run(debug=True)
